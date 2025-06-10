@@ -1,7 +1,7 @@
 #include ?
 
-int ?(void)
+int ? (void)
 {
-    ?("Hello, World!");
-    return ?;
+    ? ("Hello, World!");
+    return ? ;
 }
