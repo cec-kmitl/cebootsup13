@@ -10,9 +10,22 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
-{
-   
-   return 0;
+int main() {
+    int n;
+    scanf("%d", &n);
+    n+=1;
+    if (n <= 2) return 0;
+    char *s = calloc(n, 1);
+    int count = 0;
+    for (int i = 2; i * i < n; i++)
+        if (!s[i])
+            for (int j = i * i; j < n; j += i)
+                s[j] = 1;
+    for (int i = 2; i < n; i++)
+        if (!s[i]) count++;
+    free(s);
+    printf("%d\n", count);
+    return 0;
 }
